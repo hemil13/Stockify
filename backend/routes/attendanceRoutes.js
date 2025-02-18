@@ -5,16 +5,16 @@ const Attendance = require('../models/attendanceModel'); // Make sure you have t
 // POST request to add attendance
 router.post('/addAttendance', async (req, res) => {
   try {
-    const { employeeName, attendanceDate, attendanceStatus } = req.body;
+    // const { employeeName, attendanceDate, attendanceStatus } = req.body;
 
-    const newAttendance = new Attendance({
-      employeeName,
-      attendanceDate,
-      attendanceStatus,
-    });
+    // const newAttendance = new Attendance({
+    //   employeeName,
+    //   attendanceDate,
+    //   attendanceStatus,
+    // });
 
-    await newAttendance.save();
-    res.status(201).json(newAttendance);
+    // await newAttendance.save();
+    res.status(201).json("Hello");
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
