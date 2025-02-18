@@ -14,7 +14,7 @@ router.post('/addAttendance', async (req, res) => {
     // });
 
     // await newAttendance.save();
-    res.status(201).json("Hello");
+    res.status(200).json("Hello");
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
