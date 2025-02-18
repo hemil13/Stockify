@@ -1,0 +1,189 @@
+/* Main Container */
+.price-list-management-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh; /* Allows page to expand dynamically */
+  background-color: #f4f7fc;
+  overflow: visible; /* Prevents clipping */
+}
+
+/* Form Styles */
+.price-list-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 100%;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form Input Fields */
+.price-list-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-list-form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Form Buttons */
+.price-list-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 10px;
+}
+
+.price-list-form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+.price-list-form button:active {
+  transform: translateY(1px);
+}
+
+/* Sorting Buttons */
+.sort-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px; /* Space between buttons */
+}
+
+.sort-buttons button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sort-buttons .asc-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.sort-buttons .asc-button:hover {
+  background-color: #218838;
+}
+
+.sort-buttons .desc-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.sort-buttons .desc-button:hover {
+  background-color: #c82333;
+}
+
+/* Price List Table */
+.price-list-table {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+.price-list-table th,
+.price-list-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.price-list-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.price-list-table td {
+  background-color: white;
+}
+
+.price-list-table tr:hover td {
+  background-color: #f1f1f1;
+}
+
+/* Summary Container */
+.price-summary-container {
+  width: 100%;
+  padding-bottom: 50px; /* Adds space at the bottom */
+}
+
+/* Search Input */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.search-container input {
+  width: 300px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons for Editing and Deleting */
+.edit-button, .delete-button {
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.edit-button {
+  background-color: blue;
+}
+
+.edit-button:hover {
+  background-color: darkblue;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
