@@ -56,7 +56,7 @@ function PriceList() {
   // Fetch price data from backend
   const fetchPriceList = async () => {
   try {
-    const response = await axios.get('http://localhost:5000/api/price/getprice');
+    const response = await axios.get('https://stockify-sw2u.vercel.app/api/price/getprice');
     setOriginalPriceListData(response.data);
     setPriceListData(response.data); // Keep both states in sync
   } catch (error) {
@@ -86,11 +86,11 @@ function PriceList() {
     try {
       if (editingItem) {
         // If editing, send PUT request
-        await axios.put(`http://localhost:5000/api/price/updateprice/${editingItem}`, newPriceData);
+        await axios.put(`https://stockify-sw2u.vercel.app/api/price/updateprice/${editingItem}`, newPriceData);
         setEditingItem(null); // Reset editing state after update
       } else {
         // If adding a new price, send POST request
-        await axios.post('http://localhost:5000/api/price/addprice', newPriceData);
+        await axios.post('https://stockify-sw2u.vercel.app/api/price/addprice', newPriceData);
       }
   
       setProductName('');
@@ -110,7 +110,7 @@ function PriceList() {
   // Handle delete operation
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/price/deleteprice/${id}`);
+      await axios.delete(`https://stockify-sw2u.vercel.app/api/price/deleteprice/${id}`);
       fetchPriceList();
     } catch (error) {
       console.error('Error deleting price data:', error);

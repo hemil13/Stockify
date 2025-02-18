@@ -13,7 +13,7 @@
 
 //   // Fetch stock data
 //   useEffect(() => {
-//     axios.get('http://localhost:5000/api/stock/getstock')
+//     axios.get('https://stockify-sw2u.vercel.app/api/stock/getstock')
 //       .then(response => setStockData(response.data))
 //       .catch(error => console.error(error));
 //   }, []);
@@ -35,7 +35,7 @@
 
 //   const handleDeleteStock = async (id) => {
 //     try {
-//       await axios.delete(`http://localhost:5000/api/stock/deletestock/${id}`);
+//       await axios.delete(`https://stockify-sw2u.vercel.app/api/stock/deletestock/${id}`);
   
 //       // Update the stock data after deletion
 //       setStockData(stockData.filter(stock => stock._id !== id));
@@ -59,14 +59,14 @@
   
 //       if (editingStockId) {
 //         // Update existing stock item
-//         await axios.put(`http://localhost:5000/api/stock/updatestock/${editingStockId}`, stockData);
+//         await axios.put(`https://stockify-sw2u.vercel.app/api/stock/updatestock/${editingStockId}`, stockData);
 //       } else {
 //         // Add new stock item
-//         await axios.post('http://localhost:5000/api/stock/addstock', stockData);
+//         await axios.post('https://stockify-sw2u.vercel.app/api/stock/addstock', stockData);
 //       }
   
 //       // Refresh stock data
-//       const response = await axios.get('http://localhost:5000/api/stock/getstock');
+//       const response = await axios.get('https://stockify-sw2u.vercel.app/api/stock/getstock');
 //       setStockData(response.data);
   
 //       // Clear form fields
@@ -192,7 +192,7 @@ const StockManagement = () => {
 
   // Fetch stock data
   useEffect(() => {
-    axios.get('http://localhost:5000/api/stock/getstock')
+    axios.get('https://stockify-sw2u.vercel.app/api/stock/getstock')
       .then(response => setStockData(response.data))
       .catch(error => console.error(error));
   }, []);
@@ -207,7 +207,7 @@ const StockManagement = () => {
 
   const handleDeleteStock = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/stock/deletestock/${id}`);
+      await axios.delete(`https://stockify-sw2u.vercel.app/api/stock/deletestock/${id}`);
       setStockData(stockData.filter(stock => stock._id !== id));
     } catch (error) {
       console.error('Error deleting stock', error);
@@ -226,12 +226,12 @@ const StockManagement = () => {
       const stockData = { shopName, stockName: productName, quantity, price };
 
       if (editingStockId) {
-        await axios.put(`http://localhost:5000/api/stock/updatestock/${editingStockId}`, stockData);
+        await axios.put(`https://stockify-sw2u.vercel.app/api/stock/updatestock/${editingStockId}`, stockData);
       } else {
-        await axios.post('http://localhost:5000/api/stock/addstock', stockData);
+        await axios.post('https://stockify-sw2u.vercel.app/api/stock/addstock', stockData);
       }
 
-      const response = await axios.get('http://localhost:5000/api/stock/getstock');
+      const response = await axios.get('https://stockify-sw2u.vercel.app/api/stock/getstock');
       setStockData(response.data);
 
       setShopName('');

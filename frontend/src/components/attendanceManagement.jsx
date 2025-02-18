@@ -15,7 +15,7 @@
 //   useEffect(() => {
 //     const fetchAttendance = async () => {
 //       try {
-//         const response = await axios.get('http://localhost:5000/api/attendance/attendance');
+//         const response = await axios.get('https://stockify-sw2u.vercel.app/api/attendance/attendance');
 //         console.log("Fetched Attendance Data:", response.data); // Debugging
 //         setAttendanceData(response.data);
 //       } catch (error) {
@@ -39,15 +39,15 @@
 
 //       // If editing, update the attendance
 //       if (editId) {
-//         await axios.put(`http://localhost:5000/api/attendance/editAttendance/${editId}`, newAttendance);
+//         await axios.put(`https://stockify-sw2u.vercel.app/api/attendance/editAttendance/${editId}`, newAttendance);
 //         setEditId(null);
 //       } else {
 //         // If not editing, add new attendance
-//         await axios.post('http://localhost:5000/api/attendance/addAttendance', newAttendance);
+//         await axios.post('https://stockify-sw2u.vercel.app/api/attendance/addAttendance', newAttendance);
 //       }
 
 //       // Fetch updated attendance data
-//       const updatedData = await axios.get('http://localhost:5000/api/attendance/attendance');
+//       const updatedData = await axios.get('https://stockify-sw2u.vercel.app/api/attendance/attendance');
 //       setAttendanceData(updatedData.data);
 
 //       // Reset form
@@ -68,8 +68,8 @@
 
 //   const handleDelete = async (id) => {
 //     try {
-//       await axios.delete(`http://localhost:5000/api/attendance/deleteAttendance/${id}`);
-//       const updatedData = await axios.get('http://localhost:5000/api/attendance/attendance');
+//       await axios.delete(`https://stockify-sw2u.vercel.app/api/attendance/deleteAttendance/${id}`);
+//       const updatedData = await axios.get('https://stockify-sw2u.vercel.app/api/attendance/attendance');
 //       setAttendanceData(updatedData.data);
 //     } catch (error) {
 //       console.error('Error deleting attendance', error);
@@ -187,7 +187,7 @@ const AttendanceManagement = () => {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/attendance/attendance');
+        const response = await axios.get('https://stockify-sw2u.vercel.appapi/attendance/attendance');
         setAttendanceData(response.data);
       } catch (error) {
         console.error("Error fetching attendance:", error);
@@ -209,13 +209,13 @@ const AttendanceManagement = () => {
       const newAttendance = { employeeName, attendanceDate, attendanceStatus };
 
       if (editId) {
-        await axios.put(`http://localhost:5000/api/attendance/editAttendance/${editId}`, newAttendance);
+        await axios.put(`https://stockify-sw2u.vercel.app/api/attendance/editAttendance/${editId}`, newAttendance);
         setEditId(null);
       } else {
-        await axios.post('http://localhost:5000/api/attendance/addAttendance', newAttendance);
+        await axios.post('https://stockify-sw2u.vercel.app/api/attendance/addAttendance', newAttendance);
       }
 
-      const updatedData = await axios.get('http://localhost:5000/api/attendance/attendance');
+      const updatedData = await axios.get('https://stockify-sw2u.vercel.app/api/attendance/attendance');
       setAttendanceData(updatedData.data);
       setEmployeeName('');
       setAttendanceDate(today);
@@ -234,8 +234,8 @@ const AttendanceManagement = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/attendance/deleteAttendance/${id}`);
-      const updatedData = await axios.get('http://localhost:5000/api/attendance/attendance');
+      await axios.delete(`https://stockify-sw2u.vercel.app/api/attendance/deleteAttendance/${id}`);
+      const updatedData = await axios.get('https://stockify-sw2u.vercel.app/api/attendance/attendance');
       setAttendanceData(updatedData.data);
     } catch (error) {
       console.error('Error deleting attendance', error);
