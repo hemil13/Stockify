@@ -10,7 +10,11 @@ require('dotenv').config()
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://stockify-blush.vercel.app', // Allow only your frontend domain
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization'
+}));
 
 // Connect to MongoDB
 connectDB();
